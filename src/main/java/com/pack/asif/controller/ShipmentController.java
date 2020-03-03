@@ -24,6 +24,8 @@ public class ShipmentController {
 	
 	@RequestMapping("/charts")
 	public String showCharts() {
+		
+		
 		List<Object[]> list=service.getShipmentModeCount();
 		String path=context.getRealPath("/");
 		util.generatePie(path,list);
