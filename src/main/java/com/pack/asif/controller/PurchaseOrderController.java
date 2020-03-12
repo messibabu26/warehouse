@@ -2,6 +2,7 @@ package com.pack.asif.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.pack.asif.model.PurchaseOrder;
 import com.pack.asif.service.IPurchaseOrderService;
+import com.pack.asif.service.IShipmentTypeService;
+import com.pack.asif.service.IWhUserTypeService;
+import com.pack.asif.util.CommonUtil;
 import com.pack.asif.view.PurchaseOrderExcelView;
 import com.pack.asif.view.PurchaseOrderPdfView;
 
@@ -24,9 +28,29 @@ public class PurchaseOrderController {
 	@Autowired
 	private IPurchaseOrderService service;
 	
+	@Autowired
+	private IShipmentTypeService shipservice;
+	
+	@Autowired
+	private IWhUserTypeService whuserservice;   
+	
+	private void commonUi(Model model) {
+		List<Object[]> shiplist=shipservice.getShipIdAndShipCode();
+		Map<Integer,String> shipMap=CommonUtil.convert(shiplist);
+		model.addAttribute("shipMap",shipMap);
+		
+		List<Object[]> whuserlist=whuserservice.getUserIdAndUserCode("Vendor");
+		Map<Integer,String> whuserMap=CommonUtil.convert(whuserlist);
+		model.addAttribute("whuserMap",whuserMap);
+		
+	}   
+	
 	@RequestMapping("/reg")
 	public String showPurchasePage(Model model) {
-		model.addAttribute("purchaseOrder",new PurchaseOrder());
+		PurchaseOrder purchase=new PurchaseOrder();
+		purchase.setDefStatus("OPEN");
+		model.addAttribute("purchaseOrder",purchase);
+		 commonUi(model); 
 		return "PurchaseOrderReg";
 	}
 	
@@ -36,7 +60,10 @@ public class PurchaseOrderController {
 		Integer id=service.savePurchaseOrder(purchaseOrder);
 		String message="PurchaseOrder '"+id+"' Saved";
 		model.addAttribute("message",message);
-		model.addAttribute("purchaseOrder",new PurchaseOrder());
+		PurchaseOrder purchase=new PurchaseOrder();
+		purchase.setDefStatus("OPEN");
+		model.addAttribute("purchaseOrder",purchase);
+	    commonUi(model); 
 		return "PurchaseOrderReg";
 	}
 	

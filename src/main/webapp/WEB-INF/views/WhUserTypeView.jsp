@@ -27,8 +27,8 @@
 			<td>${ob.userCode }</td>
 		</tr>
 		<tr>
-			<th>USER</th>
-			<td>${ob.userUser }</td>
+			<th>FOR</th>
+			<td>${ob.userFor }</td>
 		</tr>
 		<tr>
 			<th>MAIL</th>

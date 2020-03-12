@@ -15,6 +15,7 @@
 		<pre>
 Shipment Id:
 <form:input path="shipId" readOnly="true" />
+
 Shipment Mode:
 <form:select path="shipMode">
 <form:option value="">---SELECT---</form:option>
@@ -23,20 +24,25 @@ Shipment Mode:
 <form:option value="Train">Train</form:option>
 <form:option value="Bus">Bus</form:option>
 </form:select>
+
 Shipment Code:
 <form:input path="shipCode" />
+
 Enable Shipment:
 <form:select path="shipEnable">
 <form:option value="">---SELECT---</form:option>
 <form:option value="YES">YES</form:option>
 <form:option value="NO">NO</form:option>
 </form:select>
+
 Shipment Grade:
 <form:radiobutton path="shipGrade" value="A" />A
 <form:radiobutton path="shipGrade" value="B" />B
 <form:radiobutton path="shipGrade" value="C" />C
+
 Description:
 <form:textarea path="shipDesc" />
+
 <input type="submit" value="UPDATED" />
 </pre>
 	</form:form>

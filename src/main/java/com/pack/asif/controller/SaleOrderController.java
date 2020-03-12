@@ -2,6 +2,7 @@ package com.pack.asif.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.pack.asif.model.SaleOrder;
 import com.pack.asif.service.ISaleOrderService;
+import com.pack.asif.service.IShipmentTypeService;
+import com.pack.asif.service.IWhUserTypeService;
+import com.pack.asif.util.CommonUtil;
 import com.pack.asif.view.SaleOrderExcelView;
 import com.pack.asif.view.SaleOrderPdfView;
 
@@ -24,9 +28,28 @@ public class SaleOrderController {
 	@Autowired
 	private ISaleOrderService service;
 	
+	@Autowired
+	private IShipmentTypeService shipmentservice;
+	
+	@Autowired
+	private IWhUserTypeService whuserservice;
+	
+	private void commonUi(Model model) {
+		List<Object[]> shipmentlist=shipmentservice.getShipIdAndShipCode();
+		Map<Integer,String> shipmentMap=CommonUtil.convert(shipmentlist);
+		model.addAttribute("shipmentMap",shipmentMap);
+		
+		List<Object[]> whuserlist=whuserservice.getUserIdAndUserCode("Customer");
+		Map<Integer,String> whuserMap=CommonUtil.convert(whuserlist);
+		model.addAttribute("whuserMap",whuserMap);
+	}
+	
 	@RequestMapping("/register")
 	public String showSaleRegPage(Model model) {
-		model.addAttribute("saleOrder",new SaleOrder());
+		SaleOrder sale=new SaleOrder();
+		sale.setDefStatus("SALE-OPEN");
+		model.addAttribute("saleOrder",sale);
+		commonUi(model);
 		return "SaleOrderRegister";
 	}
 	
@@ -35,8 +58,11 @@ public class SaleOrderController {
 			Model model) {
 		Integer id=service.saveSaleOrder(saleOrder);
 		String message="SaleOrder '"+id+"' Saved";
+		SaleOrder sale=new SaleOrder();
+		sale.setDefStatus("SALE-OPEN");
+		model.addAttribute("saleOrder",sale);
 		model.addAttribute("message",message);
-		model.addAttribute("saleOrder",new SaleOrder());
+		commonUi(model);
 		return "SaleOrderRegister";
 	}
 	

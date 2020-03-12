@@ -15,8 +15,16 @@
 	<pre>
 	Goods Code:
 	<form:input path="grnCode"/>
+	
 	Goods Type:
 	<form:input path="grnType"/>
+	
+	Purchase Order:
+	<form:select path="purchaseOrder.ordId" class="form-control">
+    <form:option value="">---SELECT----</form:option>
+    <form:options items="${ordMap }" />
+    </form:select>
+	
 	Description:
 	<form:textarea path="grnDesc"/>
 	

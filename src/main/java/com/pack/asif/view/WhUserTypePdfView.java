@@ -43,7 +43,7 @@ public class WhUserTypePdfView extends AbstractPdfView {
 		pt.addCell("ID");
 		pt.addCell("TYPE");
 		pt.addCell("CODE");
-		pt.addCell("USER");
+		pt.addCell("FOR");
 		pt.addCell("MAIL");
 		pt.addCell("CONTACT");
 		pt.addCell("IDTYPE");
@@ -55,7 +55,7 @@ public class WhUserTypePdfView extends AbstractPdfView {
 			pt.addCell(wt.getUserId().toString());
 			pt.addCell(wt.getUserType());
 			pt.addCell(wt.getUserCode());
-			pt.addCell(wt.getUserUser());
+			pt.addCell(wt.getUserFor());
 			pt.addCell(wt.getUserMail());
 			pt.addCell(wt.getUserContact().toString());
 			pt.addCell(wt.getUserIdType());

@@ -23,8 +23,16 @@
 			<td>${ob.partCode }</td>
 		</tr>
 		<tr>
-			<th>DIMENSION</th>
-			<td>${ob.partDimension }</td>
+			<th>LENGTH</th>
+			<td>${ob.partLen }</td>
+		</tr>
+		<tr>
+			<th>WIDTH</th>
+			<td>${ob.partWidth }</td>
+		</tr>
+		<tr>
+			<th>HEIGHT</th>
+			<td>${ob.partHgt }</td>
 		</tr>
 		<tr>
 			<th>COST</th>
@@ -37,6 +45,7 @@
 		<tr>
 			<th>NOTE</th>
 			<td>${ob.partDesc }</td>
+			
 		</tr>
 	</table>
 </body>

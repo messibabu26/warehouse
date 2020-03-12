@@ -25,7 +25,7 @@ public class OrderMethod {
 	@Column(name="omode")
 	private String ordMode;
 	@Column(name="ocode")
-	private Integer ordCode;
+	private String ordCode;
 	@Column(name="otype")
 	private String ordType;
 	@ElementCollection(fetch=FetchType.EAGER)
@@ -56,10 +56,10 @@ public class OrderMethod {
 	public void setOrdMode(String ordMode) {
 		this.ordMode = ordMode;
 	}
-	public Integer getOrdCode() {
+	public String getOrdCode() {
 		return ordCode;
 	}
-	public void setOrdCode(Integer ordCode) {
+	public void setOrdCode(String ordCode) {
 		this.ordCode = ordCode;
 	}
 	public String getOrdType() {

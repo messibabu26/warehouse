@@ -45,4 +45,9 @@ public class UomTypeServiceImpl implements IUomTypeService {
 	public void updateUomType(UomType uob) {
 		dao.updateUomType(uob);
 	}
+	
+	@Transactional (readOnly=true)
+	public List<Object[]> getUnitIdAndUnitModel() {
+		return dao.getUnitIdAndUnitModel();
+	}
 }

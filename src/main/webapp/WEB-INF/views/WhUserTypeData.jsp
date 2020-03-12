@@ -21,12 +21,12 @@
 					<th>ID</th>
 					<th>TYPE</th>
 					<th>CODE</th>
-					<th>USER</th>
+					<th>FOR</th>
 					<th>MAIL</th>
 					<th>CONTACT</th>
-					<th>IDTYPE</th>
+					<th>ID TYPE</th>
 					<th>OTHER</th>
-					<th>NUMBER</th>
+					<th>ID NUMBER</th>
 					<th colspan="3">OPERATION</th>
 				</tr>
 				<c:forEach items="${list }" var="ob">
@@ -34,7 +34,7 @@
 						<td>${ob.userId }</td>
 						<td>${ob.userType }</td>
 						<td>${ob.userCode }</td>
-						<td>${ob.userUser }</td>
+						<td>${ob.userFor }</td>
 						<td>${ob.userMail }</td>
 						<td>${ob.userContact }</td>
 						<td>${ob.userIdType }</td>

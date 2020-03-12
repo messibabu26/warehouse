@@ -14,16 +14,21 @@
 		<pre>
 Shipping Id:
 <form:input path="shipId" readOnly="true" />
- Shipping Code:
-   <form:input path="shipCode" />
-   Shipping Ref.Number:
-   <form:input path="shipRefNum" />
-   Courier Ref.Number:
-   <form:input path="courRefNum" />
-   Contact Details:
-   <form:input path="contDetails" />
-   Description:
-   <form:textarea path="shipDesc" />
+
+Shipping Code:
+<form:input path="shipCode" />
+
+Shipping Ref.Number:
+<form:input path="shipRefNum" />
+
+Courier Ref.Number:
+<form:input path="courRefNum" />
+
+Contact Details:
+<form:input path="contDetails" />
+
+Description:
+<form:textarea path="shipDesc" />
    
    <input type="submit" value="Update" />
 </pre>

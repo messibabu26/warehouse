@@ -10,7 +10,7 @@ import com.pack.asif.dao.IUomTypeDao;
 import com.pack.asif.model.UomType;
 
 @Repository
-public class UumTypeDaoImpl implements IUomTypeDao {
+public class UomTypeDaoImpl implements IUomTypeDao {
 
 	@Autowired
 	private HibernateTemplate ht;
@@ -33,5 +33,12 @@ public class UumTypeDaoImpl implements IUomTypeDao {
 	
 	public void updateUomType(UomType uob) {
 		ht.update(uob);
+	}
+	
+	public List<Object[]> getUnitIdAndUnitModel() {
+		String hql=" select unitId,unitModel from com.pack.asif.model.UomType ";
+		@SuppressWarnings({ "unchecked", "deprecation" })
+		List<Object[]> list=(List<Object[]>) ht.find(hql);
+		return list;
 	}
 }

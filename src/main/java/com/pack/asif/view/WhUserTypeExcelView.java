@@ -38,7 +38,7 @@ public class WhUserTypeExcelView extends AbstractXlsxView {
 		r.createCell(0).setCellValue("ID");
 		r.createCell(1).setCellValue("TYPE");
 		r.createCell(2).setCellValue("CODE");
-		r.createCell(3).setCellValue("USER");
+		r.createCell(3).setCellValue("FOR");
 		r.createCell(4).setCellValue("MAIL");
 		r.createCell(5).setCellValue("CONTACT");
 		r.createCell(6).setCellValue("IDTYPE");
@@ -53,7 +53,7 @@ public class WhUserTypeExcelView extends AbstractXlsxView {
 			r.createCell(0).setCellValue(wt.getUserId());
 			r.createCell(1).setCellValue(wt.getUserType());
 			r.createCell(2).setCellValue(wt.getUserCode());
-			r.createCell(3).setCellValue(wt.getUserUser());
+			r.createCell(3).setCellValue(wt.getUserFor());
 			r.createCell(4).setCellValue(wt.getUserMail());
 			r.createCell(5).setCellValue(wt.getUserContact());
 			r.createCell(6).setCellValue(wt.getUserIdType());

@@ -44,4 +44,9 @@ public class PurchaseOrderServiceImpl implements IPurchaseOrderService {
 	public void updatePurchaseOrder(PurchaseOrder obs) {
 		dao.updatePurchaseOrder(obs);
 	}
+	
+	@Transactional(readOnly=true)
+	public List<Object[]> getOrdIdAndOrdCode() {
+		return dao.getOrdIdAndOrdCode();
+	}
 }

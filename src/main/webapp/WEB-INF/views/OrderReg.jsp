@@ -47,8 +47,10 @@ Description:
 	Order Mode:
 	<form:radiobutton path="ordMode" value="Sale"/>Sale
 	<form:radiobutton path="ordMode" value="Purchase"/>Purchase
+	
 	Order Code:
 	<form:input path="ordCode"/>
+	
 	Order Type:
 	<form:select path="ordType">
 	<form:option value="">---SELECT---</form:option>
@@ -57,11 +59,14 @@ Description:
 	<form:option value="FEFO">FEFO</form:option>
 	<form:option value="FCFO">FCFO</form:option>
 	</form:select>
+	
 	Order Accept:
 	<form:checkbox path="ordAccept" value="Multi-Model"/>MultiModel
 	<form:checkbox path="ordAccept" value="Accept Return"/>Accept Return
+	
 	Description:
 	<form:input path="ordDesc"/>
+	
 	<input type="submit" value="CREATE"/>
 	</pre>
 	</form:form>

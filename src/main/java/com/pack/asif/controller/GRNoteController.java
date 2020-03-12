@@ -2,6 +2,7 @@ package com.pack.asif.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.pack.asif.model.GRNote;
 import com.pack.asif.service.IGRNoteService;
+import com.pack.asif.service.IPurchaseOrderService;
+import com.pack.asif.util.CommonUtil;
 import com.pack.asif.view.GRNoteExcelView;
 import com.pack.asif.view.GRNotePdfView;
 
@@ -24,9 +27,19 @@ public class GRNoteController {
 	@Autowired
 	private IGRNoteService service;
 	
+	@Autowired
+	private IPurchaseOrderService purchaseService;
+	
+	private void commonUi(Model model) {
+		List<Object[]> ordlist=purchaseService.getOrdIdAndOrdCode();
+		Map<Integer,String> ordMap=CommonUtil.convert(ordlist);
+		model.addAttribute("ordMap",ordMap);
+	}
+	
 	@RequestMapping("/register")
 	public String showGoodsRegPage(Model model) {
 		model.addAttribute("gRNote",new GRNote());
+		commonUi(model);
 		return "GRNotesReg";
 	}
 	
@@ -37,6 +50,7 @@ public class GRNoteController {
 		String message="GRNote '"+id+"' Saved";
 	    model.addAttribute("message",message);
 	    model.addAttribute("gRNote",new GRNote());
+	    commonUi(model);
 		return "GRNotesReg";
 	}
 	

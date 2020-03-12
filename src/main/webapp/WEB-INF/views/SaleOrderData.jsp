@@ -19,6 +19,8 @@
 				<tr>
 					<th>ID</th>
 					<th>CODE</th>
+					<th>SHIPMENT TYPE</th>
+					<th>WHUSER TYPE</th>
 					<th>REF.NUMBER</th>
 					<th>STOCK MODE</th>
 					<th>STOCK SOURCE</th>
@@ -30,6 +32,8 @@
 					<tr>
 						<td>${ob.saleId }</td>
 						<td>${ob.saleCode }</td>
+						<td>${ob.shipOb.shipEnable }</td>
+						<td>${ob.whuserOb.userType }</td>
 						<td>${ob.refNumber }</td>
 						<td>${ob.stockMode }</td>
 						<td>${ob.stockSource }</td>

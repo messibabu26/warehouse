@@ -16,12 +16,20 @@
 		<pre>
   Code:
   <form:input path="partCode" />
+  
   Dimension:
-  <form:checkbox path="partDimension" value="W" />W
-  <form:checkbox path="partDimension" value="L" />L
-  <form:checkbox path="partDimension" value="H" />H
+  Width:
+  <form:input path="partLen" />
+ 
+  Length:
+  <form:input path="partWidth" />
+ 
+  Height:
+  <form:input path="partHgt" />
+  
   Base Cost:
-    <form:input path="partBaseCost" />
+  <form:input path="partBaseCost" />
+  
   Base Currency:
   <form:select path="partBaseCurrency">
   <form:option value="">---SELECT---</form:option>
@@ -30,13 +38,30 @@
   <form:option value="AUS">AUS</form:option>
   <form:option value="ERU">ERU</form:option>
   </form:select>
+  
+  UOM: 
+  <form:select path="uomOb.unitId" class="form-control">
+  <form:option value="">---SELECT----</form:option>
+  <form:options items="${uomMap }" />
+  </form:select>
+  
+  ORDER METHOD:
+  <form:select path="ordObSale.ordId" class="form-control">
+  <form:option value="">---SELECT SALE----</form:option>
+  <form:options items="${ordSaleMap }" />
+  </form:select>
+ 
+  <form:select path="ordObPurchase.ordId" class="form-control">
+  <form:option value="">---SELECT PURCHASE----</form:option>
+  <form:options items="${ordPurMap }" />
+  </form:select>
+  
   Description:
-      <form:input path="partDesc" />
+  <form:input path="partDesc" />
     
     <input type="submit" value="Create Part" />
   </pre>
 	</form:form>
 	${message }
-
 </body>
 </html>

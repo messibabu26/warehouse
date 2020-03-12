@@ -13,6 +13,7 @@
 		<pre>
 Unit Id:
 <form:input path="unitId" readOnly="true" />
+
 Unit Type:
 <form:select path="unitType">
 <form:option value="">---SELECT---</form:option>
@@ -20,10 +21,13 @@ Unit Type:
 <form:option value="No-Packing">No Packing</form:option>
 <form:option value="-NA-">-NA-</form:option>
 </form:select>
+
 Unit Model:
 <form:input path="unitModel" />
+
 Description:
 <form:textarea path="unitDesc" />
+
 <input type="submit" value="Update" />
 </pre>
 	</form:form>

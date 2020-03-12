@@ -15,12 +15,16 @@
 	<pre>
    Shipping Code:
    <form:input path="shipCode"/>
+   
    Shipping Ref.Number:
    <form:input path="shipRefNum"/>
+   
    Courier Ref.Number:
    <form:input path="courRefNum"/>
+   
    Contact Details:
    <form:input path="contDetails"/>
+   
    Description:
    <form:textarea path="shipDesc"/>
    

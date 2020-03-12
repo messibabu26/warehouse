@@ -34,4 +34,11 @@ public class PurchaseOrderDaoImpl implements IPurchaseOrderDao {
 	public void updatePurchaseOrder(PurchaseOrder obs) {
 		ht.update(obs);
 	}
+	
+	public List<Object[]> getOrdIdAndOrdCode() {
+		String hql=" select ordId,ordCode from "+PurchaseOrder.class.getName()+" ";
+		@SuppressWarnings({ "unchecked", "deprecation" })
+		List<Object[]> list=(List<Object[]>) ht.find(hql);
+		return list;
+	}
 }

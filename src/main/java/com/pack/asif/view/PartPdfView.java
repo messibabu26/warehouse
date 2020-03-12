@@ -41,19 +41,29 @@ public class PartPdfView extends AbstractPdfView {
 		PdfPTable pt=new PdfPTable(6);
 		pt.addCell("ID");
 		pt.addCell("CODE");
-		pt.addCell("DIMENSION");
+		pt.addCell("LENGTH");
+		pt.addCell("WIDTH");
+		pt.addCell("HEIGHT");
 		pt.addCell("COST");
 		pt.addCell("CURRENCY");
 		pt.addCell("NOTE");
+		/*pt.addCell("UOM");
+		pt.addCell("ORDER METHODS");
+		pt.addCell("ORDER METHODP");*/
 		
 		//adding data to table
 		for(Part pr:list) {
 			pt.addCell(pr.getPartId().toString());
 			pt.addCell(pr.getPartCode());
-			pt.addCell(pr.getPartDimension());
+			pt.addCell(pr.getPartLen().toString());
+			pt.addCell(pr.getPartWidth().toString());
+			pt.addCell(pr.getPartHgt().toString());
 			pt.addCell(pr.getPartBaseCost().toString());
 			pt.addCell(pr.getPartBaseCurrency());
 			pt.addCell(pr.getPartDesc());
+			/*pt.addCell(pr.getUomOb().getunitModel());
+			pt.addCell(pr.getOrdSaleOb().getordCode());
+			pt.addCell(pr.getOrdPurchaseOb().getordCode);*/
 		}
 		
 		//add table to document

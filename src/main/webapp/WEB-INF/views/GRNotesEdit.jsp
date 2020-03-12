@@ -14,12 +14,15 @@
 		<pre>
 Goods Id:
 <form:input path="grnId" readOnly="true" />
+
 Goods Code:
-	<form:input path="grnCode" />
-	Goods Type:
-	<form:input path="grnType" />
-	Description:
-	<form:textarea path="grnDesc" />
+<form:input path="grnCode" />
+	
+Goods Type:
+<form:input path="grnType" />
+
+Description:
+<form:textarea path="grnDesc" />
 	
 	<input type="submit" value="Update" />
 	</pre>

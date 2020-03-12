@@ -15,7 +15,7 @@ public class Shipping {
 	@Column(name = "sid")
 	private Integer shipId;
 	@Column(name = "scode")
-	private Integer shipCode;
+	private String shipCode;
 	@Column(name = "srefnum")
 	private String shipRefNum;
 	@Column(name = "scourefnum")
@@ -42,11 +42,11 @@ public class Shipping {
 		this.shipId = shipId;
 	}
 
-	public Integer getShipCode() {
+	public String getShipCode() {
 		return shipCode;
 	}
 
-	public void setShipCode(Integer shipCode) {
+	public void setShipCode(String shipCode) {
 		this.shipCode = shipCode;
 	}
 

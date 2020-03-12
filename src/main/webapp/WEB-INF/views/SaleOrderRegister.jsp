@@ -10,31 +10,48 @@
 <body>
 
 	<h3>Welcome to SaleOrder Register Page!!!</h3>
-	
+
 	<form:form action="save" method="POST" modelAttribute="saleOrder">
-	<pre>
-	Sale Code:
-	<form:input path="saleCode"/>
-	Ref.Number:
-	<form:input path="refNumber"/>
-	Stock Mode:
-	<form:radiobutton path="stockMode" value="GRADE"/>GRADE
-	<form:radiobutton path="stockMode" value="MARGIN"/>MARGIN
-	Stock Source:
-	<form:select path="stockSource">
-	<form:option value="">---SELECT---</form:option>
-	<form:option value="OPEN">OPEN</form:option>
-	<form:option value="AVAIL">AVAIL</form:option>
-	<form:option value="REFUND">REFUND</form:option>
-	</form:select>
-	Default Status:
-	<form:textarea path="defStatus" placeholder="SALE-OPEN"/>
-	Description:
-	<form:textarea path="saleDesc"/>
+		<pre>
+Sale Code:
+<form:input path="saleCode" />
 	
-	<input type="submit" value="Create SaleOrder"/>
+Shipment Type:
+<form:select path="shipOb.shipId" class="form-control">
+<form:option value="">---SELECT----</form:option>
+<form:options items="${shipmentMap }" />
+</form:select>
+  
+WhUserType:
+<form:select path="whuserOb.userId" class="form-control">
+<form:option value="">---SELECT CUSTOMER----</form:option>
+<form:options items="${whuserMap }" />
+</form:select>
+
+Ref.Number:
+<form:input path="refNumber" />
+	
+Stock Mode:
+<form:radiobutton path="stockMode" value="GRADE" />GRADE
+<form:radiobutton path="stockMode" value="MARGIN" />MARGIN
+	
+Stock Source:
+<form:select path="stockSource">
+<form:option value="">---SELECT---</form:option>
+<form:option value="OPEN">OPEN</form:option>
+<form:option value="AVAIL">AVAIL</form:option>
+<form:option value="REFUND">REFUND</form:option>
+</form:select>
+	
+Default Status:
+<form:input path="defStatus" readonly="true" />
+	
+Description:
+<form:textarea path="saleDesc" />
+	
+<input type="submit" value="Create SaleOrder" />
 	</pre>
 	</form:form>
-${message }
+	${message }
 </body>
 </html>

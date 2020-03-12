@@ -14,26 +14,36 @@
 		<pre>
 Part Id:
 <form:input path="partId" readOnly="true" />
+
 Code:
-  <form:input path="partCode" />
-  Dimension:
-  <form:checkbox path="partDimension" value="W" />W
-  <form:checkbox path="partDimension" value="L" />L
-  <form:checkbox path="partDimension" value="H" />H
-  Base Cost:
-    <form:input path="partBaseCost" />
-  Base Currency:
-  <form:select path="partBaseCurrency">
-  <form:option value="">---SELECT---</form:option>
-  <form:option value="INR">INR</form:option>
-  <form:option value="USD">USD</form:option>
-  <form:option value="AUS">AUS</form:option>
-  <form:option value="ERU">ERU</form:option>
-  </form:select>
-  Description:
-      <form:input path="partDesc" />
+<form:input path="partCode" />
+
+Dimension:
+Width:
+<form:input path="partWidth" />
+
+Length:
+<form:input path="partLen" />
+
+Height:
+<form:input path="partHgt" />
+
+Base Cost:
+<form:input path="partBaseCost" />
+
+Base Currency:
+<form:select path="partBaseCurrency">
+<form:option value="">---SELECT---</form:option>
+<form:option value="INR">INR</form:option>
+<form:option value="USD">USD</form:option>
+<form:option value="AUS">AUS</form:option>
+<form:option value="ERU">ERU</form:option>
+</form:select>
+
+Description:
+<form:input path="partDesc" />
     
-    <input type="submit" value="Update" />
+<input type="submit" value="Update" />
   </pre>
 	</form:form>
 	${message }

@@ -39,10 +39,13 @@ Unit Type:
 <form:option value="No-Packing">No Packing</form:option>
 <form:option value="-NA-">-NA-</form:option>
 </form:select>
+
 Unit Model:
 <form:input path="unitModel" />
+
 Description:
 <form:textarea path="unitDesc" />
+
 <input type="submit" value="CREATE UOM" />
 </pre>
 	</form:form>

@@ -33,4 +33,11 @@ public class OrderMethodDaoImpl implements IOrderMethodDao {
 	public void updateOrderMethod(OrderMethod cob) {
 		ht.update(cob);
 	}
+	
+	public List<Object[]> getOrdIdAndOrdCode(String mode) {
+		String hql=" select ordId,ordCode from com.pack.asif.model.OrderMethod where ordMode=?0 ";
+		@SuppressWarnings({ "deprecation", "unchecked" })
+		List<Object[]> list=(List<Object[]>) ht.find(hql,mode);
+		return list;
+	}
 }

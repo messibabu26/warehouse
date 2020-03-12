@@ -17,14 +17,19 @@
 	WareHouse UserType:
 	<form:radiobutton path="userType" value="Vendor" />Vendor
 	<form:radiobutton path="userType" value="Customer" />Customer
+	
 	WareHouse UserCode:
 	<form:input path="userCode" />
-	WareHouse ForUser:
-	<form:input path="userUser" />
+	
+	WareHouse UserFor:
+	<form:input path="userFor" />
+	
 	WareHouse UserMail:
 	<form:input path="userMail" />
+	
 	WareHouse UserContact:
 	<form:input path="userContact" />
+	
 	WareHouse UserIdType:
 	<form:select path="userIdType">
 	<form:option value="">---SELECT---</form:option>
@@ -33,9 +38,11 @@
 	<form:option value="VOTER ID">VOTER ID</form:option>
 	<form:option value="OTHER">OTHER</form:option>
 	</form:select>
+	
 	If Other:
 	<form:input path="userOther" />
-	WareHouse UserNumber:
+	
+	WareHouse UserIdNumber:
 	<form:input path="idNumber" />
 	
 	<input type="submit" value="CREATE WAREHOUSE" />

@@ -21,6 +21,7 @@
 					<th>ID</th>
 					<th>CODE</th>
 					<th>TYPE</th>
+					<th>PURCHASE ORDER</th>
 					<th>NOTE</th>
 					<th colspan="3">OPERATION</th>
 				</tr>
@@ -29,6 +30,7 @@
 						<td>${ob.grnId }</td>
 						<td>${ob.grnCode }</td>
 						<td>${ob.grnType }</td>
+						<td>${ob.purchaseOrder.ordCode }
 						<td>${ob.grnDesc }</td>
 						<td>
 						   <a href="delete?gid=${ob.grnId }">DELETE</a>
