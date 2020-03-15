@@ -38,23 +38,30 @@ public class PurchaseOrderExcelView extends AbstractXlsxView {
 		Row r=s.createRow(0);
 		r.createCell(0).setCellValue("ID");
 		r.createCell(1).setCellValue("CODE");
-		r.createCell(2).setCellValue("REF.NUMBER");
-		r.createCell(3).setCellValue("QUALITY CHECK");
-		r.createCell(4).setCellValue("DEFAULT STATUS");
-		r.createCell(5).setCellValue("NOTE");
+		r.createCell(2).setCellValue("SHIPMENT TYPE");
+		r.createCell(3).setCellValue("WHUSER TYPE");
+		r.createCell(4).setCellValue("REF.NUMBER");
+		r.createCell(5).setCellValue("QUALITY CHECK");
+		r.createCell(6).setCellValue("DEFAULT STATUS");
+		r.createCell(7).setCellValue("NOTE");
+		
+	
 	}
 	
 	@SuppressWarnings("unused")
 	private void setBody(Sheet s,List<PurchaseOrder> list) {
 		int count=1;
-		for(PurchaseOrder st:list) {
+		for(PurchaseOrder po:list) {
 			Row r=s.createRow(count++);
-			r.createCell(0).setCellValue(st.getOrdId().toString());
-			r.createCell(1).setCellValue(st.getOrdCode());
-			r.createCell(2).setCellValue(st.getRefNumber());
-			r.createCell(3).setCellValue(st.getQuaCheck());
-			r.createCell(4).setCellValue(st.getDefStatus());
-			r.createCell(5).setCellValue(st.getOrdDesc());
+			r.createCell(0).setCellValue(po.getOrdId().toString());
+			r.createCell(1).setCellValue(po.getOrdCode());
+			r.createCell(2).setCellValue(po.getShipOb().getShipMode());
+			r.createCell(3).setCellValue(po.getWhuserOb().getUserCode());
+			r.createCell(4).setCellValue(po.getRefNumber());
+			r.createCell(5).setCellValue(po.getQuaCheck());
+			r.createCell(6).setCellValue(po.getDefStatus());
+			r.createCell(7).setCellValue(po.getOrdDesc());
+			
 		}
 	}
 

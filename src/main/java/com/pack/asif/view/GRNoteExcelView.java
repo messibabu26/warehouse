@@ -38,7 +38,8 @@ public class GRNoteExcelView extends AbstractXlsxView {
 		r.createCell(0).setCellValue("ID");
 		r.createCell(1).setCellValue("CODE");
 		r.createCell(2).setCellValue("TYPE");
-		r.createCell(3).setCellValue("NOTE");
+		r.createCell(3).setCellValue("PURCHASE ORDER");
+		r.createCell(4).setCellValue("NOTE");
 	}
 	
 	@SuppressWarnings("unused")
@@ -49,7 +50,8 @@ public class GRNoteExcelView extends AbstractXlsxView {
 			r.createCell(0).setCellValue(gn.getGrnId());
 			r.createCell(1).setCellValue(gn.getGrnCode());
 			r.createCell(2).setCellValue(gn.getGrnType());
-			r.createCell(3).setCellValue(gn.getGrnDesc());
+			r.createCell(3).setCellValue(gn.getPurchaseOrder().getOrdCode());
+			r.createCell(4).setCellValue(gn.getGrnDesc());
 		}
 	}
 

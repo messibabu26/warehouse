@@ -38,9 +38,11 @@ public class SaleOrderPdfView extends AbstractPdfView {
 		List<SaleOrder> list=(List<SaleOrder>) model.get("list");
 		
 		//create table with no. of columns
-		PdfPTable pt=new PdfPTable(7);
+		PdfPTable pt=new PdfPTable(9);
 		pt.addCell("ID");
 		pt.addCell("CODE");
+		pt.addCell("SHIPMENT TYPE");
+		pt.addCell("WHUSER TYPE");
 		pt.addCell("REF.NUMBER");
 		pt.addCell("STOCK MODE");
 		pt.addCell("STOCK SOURCE");
@@ -51,6 +53,8 @@ public class SaleOrderPdfView extends AbstractPdfView {
 		for(SaleOrder so:list) {
 			pt.addCell(so.getSaleId().toString());
 			pt.addCell(so.getSaleCode().toString());
+			pt.addCell(so.getShipOb().getShipMode());
+			pt.addCell(so.getWhuserOb().getUserCode());
 			pt.addCell(so.getRefNumber().toString());
 			pt.addCell(so.getStockMode());
 			pt.addCell(so.getStockSource());

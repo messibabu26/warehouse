@@ -24,10 +24,11 @@
 					<th>HEIGHT</th>
 					<th>COST</th>
 					<th>CURRENCY</th>
-					<th>NOTE</th>
 					<th>UOM</th>
 					<th>ORDER METHODS</th>
 					<th>ORDER METHODP</th>
+					<th>NOTE</th>
+
 					<th colspan="3">OPERATION</th>
 				</tr>
 				<c:forEach items="${list }" var="ob">
@@ -39,10 +40,11 @@
 						<td>${ob.partHgt }</td>
 						<td>${ob.partBaseCost }</td>
 						<td>${ob.partBaseCurrency }</td>
-						<td>${ob.partDesc }</td>
 						<td>${ob.uomOb.unitModel }</td>
 						<td>${ob.ordObSale.ordCode }</td>
 						<td>${ob.ordObPurchase.ordCode }</td>
+						<td>${ob.partDesc }</td>
+
 						<td><a href="delete?pid=${ob.partId }">DELETE</a></td>
 						<td><a href="edit?pid=${ob.partId}">EDIT</a></td>
 						<td><a href="view?pid=${ob.partId}">VIEW</a></td>

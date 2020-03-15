@@ -38,7 +38,7 @@ public class PartPdfView extends AbstractPdfView {
 		List<Part> list=(List<Part>) model.get("list");
 		
 		//create table with no. of columns
-		PdfPTable pt=new PdfPTable(6);
+		PdfPTable pt=new PdfPTable(11);
 		pt.addCell("ID");
 		pt.addCell("CODE");
 		pt.addCell("LENGTH");
@@ -46,10 +46,11 @@ public class PartPdfView extends AbstractPdfView {
 		pt.addCell("HEIGHT");
 		pt.addCell("COST");
 		pt.addCell("CURRENCY");
-		pt.addCell("NOTE");
-		/*pt.addCell("UOM");
+		pt.addCell("UOM");
 		pt.addCell("ORDER METHODS");
-		pt.addCell("ORDER METHODP");*/
+		pt.addCell("ORDER METHODP");
+		pt.addCell("NOTE");
+		
 		
 		//adding data to table
 		for(Part pr:list) {
@@ -60,10 +61,11 @@ public class PartPdfView extends AbstractPdfView {
 			pt.addCell(pr.getPartHgt().toString());
 			pt.addCell(pr.getPartBaseCost().toString());
 			pt.addCell(pr.getPartBaseCurrency());
+			pt.addCell(pr.getUomOb().getUnitModel());
+			pt.addCell(pr.getOrdObSale().getOrdCode());
+			pt.addCell(pr.getOrdObPurchase().getOrdCode());
 			pt.addCell(pr.getPartDesc());
-			/*pt.addCell(pr.getUomOb().getunitModel());
-			pt.addCell(pr.getOrdSaleOb().getordCode());
-			pt.addCell(pr.getOrdPurchaseOb().getordCode);*/
+			
 		}
 		
 		//add table to document

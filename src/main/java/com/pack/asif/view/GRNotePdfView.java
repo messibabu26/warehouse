@@ -38,10 +38,11 @@ public class GRNotePdfView extends AbstractPdfView {
 		List<GRNote> list=(List<GRNote>) model.get("list");
 		
 		//create table with no. of columns
-		PdfPTable pt=new PdfPTable(4);
+		PdfPTable pt=new PdfPTable(5);
 		pt.addCell("ID");
 		pt.addCell("CODE");
 		pt.addCell("TYPE");
+		pt.addCell("PURCHASE ORDER");
 		pt.addCell("NOTE");
 		
 		//adding data to table
@@ -49,6 +50,7 @@ public class GRNotePdfView extends AbstractPdfView {
 			pt.addCell(gn.getGrnId().toString());
 			pt.addCell(gn.getGrnCode().toString());
 			pt.addCell(gn.getGrnType());
+			pt.addCell(gn.getPurchaseOrder().getOrdCode());
 			pt.addCell(gn.getGrnDesc());
 		}
 		

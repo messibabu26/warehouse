@@ -38,22 +38,28 @@ public class PurchaseOrderPdfView extends AbstractPdfView {
 		List<PurchaseOrder> list=(List<PurchaseOrder>) model.get("list");
 		
 		//create table with no. of columns
-		PdfPTable pt=new PdfPTable(6);
+		PdfPTable pt=new PdfPTable(8);
 		pt.addCell("ID");
 		pt.addCell("CODE");
+		pt.addCell("SHIPMENT TYPE");
+		pt.addCell("WHUSER TYPE");
 		pt.addCell("REF.NUMBER");
 		pt.addCell("QUALITY CHECK");
 		pt.addCell("DEFAULT STATUS");
 		pt.addCell("NOTE");
 		
+		
 		//adding data to table
 		for(PurchaseOrder po:list) {
 			pt.addCell(po.getOrdId().toString());
 			pt.addCell(po.getOrdCode().toString());
+			pt.addCell(po.getShipOb().getShipMode());
+			pt.addCell(po.getWhuserOb().getUserCode());
 			pt.addCell(po.getRefNumber().toString());
 			pt.addCell(po.getQuaCheck());
 			pt.addCell(po.getDefStatus());
 			pt.addCell(po.getOrdDesc());
+			
 		}
 		
 		//add table to document

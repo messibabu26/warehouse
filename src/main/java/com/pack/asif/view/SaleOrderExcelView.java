@@ -38,11 +38,13 @@ public class SaleOrderExcelView extends AbstractXlsxView {
 		Row r=s.createRow(0);
 		r.createCell(0).setCellValue("ID");
 		r.createCell(1).setCellValue("CODE");
-		r.createCell(2).setCellValue("REF.NUMBER");
-		r.createCell(3).setCellValue("STOCK MODE");
-		r.createCell(4).setCellValue("STOCK SOURCE");
-		r.createCell(5).setCellValue("DEFAULT STATUS");
-		r.createCell(6).setCellValue("NOTE");
+		r.createCell(2).setCellValue("SHIPMENT TYPE");
+		r.createCell(3).setCellValue("WHUSER TYPE");
+		r.createCell(4).setCellValue("REF.NUMBER");
+		r.createCell(5).setCellValue("STOCK MODE");
+		r.createCell(6).setCellValue("STOCK SOURCE");
+		r.createCell(7).setCellValue("DEFAULT STATUS");
+		r.createCell(8).setCellValue("NOTE");
 	}
 	
 	@SuppressWarnings("unused")
@@ -52,11 +54,13 @@ public class SaleOrderExcelView extends AbstractXlsxView {
 			Row r=s.createRow(count++);
 			r.createCell(0).setCellValue(so.getSaleId().toString());
 			r.createCell(1).setCellValue(so.getSaleCode());
-			r.createCell(2).setCellValue(so.getRefNumber());
-			r.createCell(3).setCellValue(so.getStockMode());
-			r.createCell(4).setCellValue(so.getStockSource());
-			r.createCell(5).setCellValue(so.getDefStatus());
-			r.createCell(6).setCellValue(so.getSaleDesc());
+			r.createCell(2).setCellValue(so.getShipOb().getShipMode());
+			r.createCell(3).setCellValue(so.getWhuserOb().getUserCode());
+			r.createCell(4).setCellValue(so.getRefNumber());
+			r.createCell(5).setCellValue(so.getStockMode());
+			r.createCell(6).setCellValue(so.getStockSource());
+			r.createCell(7).setCellValue(so.getDefStatus());
+			r.createCell(8).setCellValue(so.getSaleDesc());
 		}
 	}
 
